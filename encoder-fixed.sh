@@ -22,9 +22,22 @@ cat encode-payload-11.txt | base64 > shell-encoded.txt
 # Remove all .txt Files
 rm cc.txt encode-payload*.txt
 
-# final result output
-cat shell-encoded.txt
+# Decode Version
+cat shell-encoded.txt | base64 --decode > decode-11.txt
+cat decode-11.txt | base64 --decode > decode-10.txt
+cat decode-10.txt | base64 --decode > decode-9.txt
+cat decode-9.txt | base64 --decode > decode-8.txt
+cat decode-8.txt | base64 --decode > decode-7.txt
+cat decode-7.txt | base64 --decode > decode-6.txt
+cat decode-6.txt | base64 --decode > decode-5.txt
+cat decode-5.txt | base64 --decode > decode-4.txt
+cat decode-4.txt | base64 --decode > decode-3.txt
+cat decode-3.txt | base64 --decode > decode-2.txt
+cat decode-2.txt | base64 --decode > decode-1.txt
+cat decode-1.txt | base64 --decode > decode-0.txt
 
-# Command 
+cat decode-0.txt | base64 -d > shell.sh
 
-cat shell-encoded.txt | base64 -d | bash
+chmod +x shell.sh 
+
+bash shell.sh 
